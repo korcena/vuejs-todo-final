@@ -24,6 +24,9 @@ var app = new Vue({
                 this.todos.push({isDone: false, value: value});
             }
             event.target.value = null;
+        }, 
+        removeEntry: function(event, index){
+            this.todos.splice(index, 1);
         }
     }, 
     mounted: function(){

@@ -35,3 +35,9 @@ body > div input[type="text"]:focus {
   text-decoration: line-through;
   color: grey;
 }
+.items .item .close {
+  color: red;
+  font-weight: bold;
+  margin-left: auto;
+  cursor: pointer;
+}

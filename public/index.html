@@ -19,9 +19,11 @@
         </div>
 
         <div class="items">
-            <div class="item" v-for="entry in todos" v-bind:class="{done : entry.isDone}">
+            <div class="item" v-for="(entry, index) in todos" v-bind:class="{done : entry.isDone}">
                 <input type="checkbox" v-model="entry.isDone">
                 {{entry.value}}
+
+                <a class="close" v-on:click="removeEntry($event, index)">X</a>
             </div>
         </div>
     </div>
