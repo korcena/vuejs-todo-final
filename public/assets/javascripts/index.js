@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app', 
     data : {
+        newEntry: "",
         todos: []
     }, 
     watch: {
@@ -19,11 +20,10 @@ var app = new Vue({
     }, 
     methods: {
         addEntry: function(event) {
-            const value = event.target.value;
-            if(value){
-                this.todos.push({isDone: false, value: value});
+            if(this.newEntry){
+                this.todos.push({isDone: false, value: this.newEntry});
             }
-            event.target.value = null;
+            this.newEntry = null;
         }, 
         removeEntry: function(event, index){
             this.todos.splice(index, 1);
